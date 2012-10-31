@@ -1,4 +1,3 @@
-
 (server-start)
 
 ;; ----------
@@ -49,6 +48,12 @@
 (require 'winner)
 (require 'uniquify)
 (require 'nnmairix)
+(require 'linum)
+(require 'tool-bar)
+(require 'menu-bar)
+(require 'tooltip)
+(require 'scroll-bar)
+(require 'inv-19)
 
 ;; ----------------
 ;; auto-mode-alists
