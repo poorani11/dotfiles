@@ -5,12 +5,13 @@
 ;; load-paths
 ;; ----------
 (add-to-list 'load-path "~/.elisp/")
-(add-to-list 'load-path "~/.elisp/theme")
+(add-to-list 'load-path "~/.elisp/themes")
 (add-to-list 'load-path "~/.elisp/slime")
 (add-to-list 'load-path "~/.elisp/org-mode")
 (add-to-list 'load-path "~/.elisp/haskell-mode")
 (add-to-list 'load-path "~/.elisp/org-mode-contrib")
 (add-to-list 'load-path "~/.elisp/magit")
+(add-to-list 'load-path "~/.elisp/magit/contrib")
 (add-to-list 'load-path "~/.elisp/git-commit-mode")
 (add-to-list 'load-path "~/.elisp/ess/lisp")
 (add-to-list 'load-path "~/.elisp/coffee-mode")

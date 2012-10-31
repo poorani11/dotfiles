@@ -12,13 +12,13 @@
 	url = git://github.com/nablaone/slime
 [submodule ".elisp/git-commit-mode"]
 	path = .elisp/git-commit-mode
-	url = git://github.com/rafl/git-commit-mode
+	url = git://github.com/rafl/git-commit-mode.git
 [submodule ".elisp/haskell-mode"]
 	path = .elisp/haskell-mode
 	url = git://github.com/haskell/haskell-mode
 [submodule ".elisp/ess"]
 	path = .elisp/ess
-	url = git://github.com/emacs-ess/ESS
+	url = git://github.com/emacs-ess/ESS.git
 
 
 [submodule ".elisp/coffee-mode"]
