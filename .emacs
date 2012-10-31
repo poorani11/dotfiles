@@ -53,16 +53,6 @@
 (require 'menu-bar)
 (require 'tooltip)
 (require 'scroll-bar)
-(require 'inv-19)
-
-;; ----------------
-;; auto-mode-alists
-;; ----------------
-(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
-(add-to-list 'auto-mode-alist '("\\.cs$" . csharp-mode))
-(add-to-list 'auto-mode-alist '("\\.hs$" . haskell-mode))
-(add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
-(add-to-list 'auto-mode-alist '("mutt-.*-" . mail-mode))
 
 ;; ----------------------
 ;; General Customizations
