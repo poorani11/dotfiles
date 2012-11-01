@@ -17,7 +17,7 @@
 	smtpencryption = tls
 	chainreplyto = false
 [core]
-	editor = "emacs -nw"
+	editor = "emacsclient -a '' -nc"
 	excludesfile = /home/psjinx/.gitignore
 [grep]
 	lineNumber = true

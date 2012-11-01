@@ -82,14 +82,15 @@
               blink-matching-delay .25
               vc-follow-symlinks t
               indent-tabs-mode t
-              tab-width 8
+              tab-width 4
               c-basic-offset 8
               edebug-trace t
               fill-adapt-mode t
               winner-mode t
               uniquify-buffer-name-style 'forward)
 
-(set-face-attribute 'default nil :height 85)
+(set-default-font '-adobe-Source\ Code\ Pro-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1)
+(set-face-attribute 'default nil :height 130)
 (global-font-lock-mode 1)
 (global-auto-revert-mode 1)
 (color-theme-hober2)
@@ -99,14 +100,14 @@
 (global-linum-mode 1)
 
 ;; Remove toolbar, menubar, scrollbar and tooltips
-(tool-bar-mode -1)
-(menu-bar-mode -1)
-(tooltip-mode -1)
-(set-scroll-bar-mode 'nil)
+;;(tool-bar-mode -1)
+;;(menu-bar-mode -1)
+;;(tooltip-mode -1)
+;;(set-scroll-bar-mode 'nil)
 
 ;; Set the default browser to Conkeror
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "google-chrome")
+      browse-url-generic-program "firefox")
 
 ;; General mode loading
 (show-paren-mode t)
@@ -246,12 +247,12 @@
 (setq rcirc-server-alist
       '(("irc.freenode.net"
          :port 6667
-         :nick "artagnon"
-         :full-name "Ramkumar Ramachandra")))
+         :nick "psjinx"
+         :full-name "Pankaj Singh")))
 
 (defun gtalk ()
   (interactive)
-  (rcirc-connect "localhost" "6667" "artagnon"))
+  (rcirc-connect "localhost" "6667" "psjinx"))
 
 ;; Wrap long lines according to the width of the window
 (add-hook 'window-configuration-change-hook
@@ -314,7 +315,7 @@
 ;; Display tweaks
 (add-hook 'gnus-group-mode-hook 'gnus-topic-mode) ;; topics in groups
 
-(defvar *ram-mails* "artagnon@gmail\\.com")
+(defvar *ram-mails* "psjinx@gmail\\.com")
 (setq gnus-extra-headers '(To Cc)
       nnmail-extra-headers gnus-extra-headers)
 
@@ -476,8 +477,8 @@
 ;; ---------
 ;; mail-mode
 ;; ---------
-(setq user-mail-address "artagnon@gmail.com"
-      user-full-name "Ramkumar Ramachandra")
+(setq user-mail-address "psjinx@gmail.com"
+      user-full-name "Pankaj Singh")
 
 (add-hook 'mail-mode-hook
           (lambda ()

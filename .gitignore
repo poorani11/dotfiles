@@ -1,5 +1,19 @@
 xmonad/xmonad
 xmonad/xmonad.hi
 xmonad/xmonad.o
-*.elc
+
+Emacs.gitignore
 *~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+
+*.elc
+
+auto-save-list
+tramp
+.\#*
+
+# Org-mode
+.org-id-locations
+*_archive

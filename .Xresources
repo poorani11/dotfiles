@@ -59,3 +59,7 @@ Xft.hinting: true
 Xft.autohint: true
 Xft.render: true
 Xft.hintstyle: hintslight
+
+
+Emacs.fullscreen: maximized
+
