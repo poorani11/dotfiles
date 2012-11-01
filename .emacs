@@ -54,6 +54,14 @@
 (require 'tooltip)
 (require 'scroll-bar)
 
+(require 'pymacs)
+(pymacs-load "ropemacs" "rope-")
+(setq ropemacs-enable-autoimport t)
+
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.elisp/ac-dict")
+(ac-config-default)
+
 ;; ----------------------
 ;; General Customizations
 ;; ----------------------
