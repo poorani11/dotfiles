@@ -21,3 +21,6 @@
 [submodule ".elisp/coffee-mode"]
 	path = .elisp/coffee-mode
 	url = git://github.com/defunkt/coffee-mode.git
+[submodule ".elisp/pony-mode"]
+	path = .elisp/pony-mode
+	url = git://github.com/davidmiller/pony-mode.git

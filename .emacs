@@ -13,6 +13,7 @@
 (add-to-list 'load-path "~/.elisp/magit/contrib")
 (add-to-list 'load-path "~/.elisp/git-commit-mode")
 (add-to-list 'load-path "~/.elisp/ess/lisp")
+(add-to-list 'load-path "~/.elisp/pony-mode/src")
 (add-to-list 'load-path "~/.elisp/coffee-mode")
 
 ;; ---------
@@ -61,6 +62,8 @@
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.elisp/ac-dict")
 (ac-config-default)
+
+(require 'pony-mode)
 
 ;; ----------------------
 ;; General Customizations
