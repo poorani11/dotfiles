@@ -6,21 +6,19 @@
 	url = git://github.com/magit/magit
 [submodule ".elisp/slime"]
 	path = .elisp/slime
-	url = git://github.com/nablaone/slime
+	url = git@github.com:psjinx/slime.git
 [submodule ".elisp/git-commit-mode"]
 	path = .elisp/git-commit-mode
-	url = git://github.com/rafl/git-commit-mode.git
+	url = git@github.com:psjinx/git-commit-mode.git
 [submodule ".elisp/haskell-mode"]
 	path = .elisp/haskell-mode
 	url = git://github.com/haskell/haskell-mode
 [submodule ".elisp/ess"]
 	path = .elisp/ess
-	url = git://github.com/emacs-ess/ESS.git
-
-
+	url = git@github.com:psjinx/ESS.git
 [submodule ".elisp/coffee-mode"]
 	path = .elisp/coffee-mode
-	url = git://github.com/defunkt/coffee-mode.git
+	url = git@github.com:psjinx/coffee-mode.git
 [submodule ".elisp/pony-mode"]
 	path = .elisp/pony-mode
 	url = git://github.com/davidmiller/pony-mode.git
