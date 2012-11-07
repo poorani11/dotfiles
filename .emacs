@@ -15,6 +15,7 @@
 (add-to-list 'load-path "~/.elisp/ess/lisp")
 (add-to-list 'load-path "~/.elisp/pony-mode/src")
 (add-to-list 'load-path "~/.elisp/coffee-mode")
+(add-to-list 'load-path "~/.elisp/php-mode")
 
 ;; ---------
 ;; Autoloads
@@ -81,9 +82,10 @@
               quack-pretty-lambda-p t
               blink-matching-delay .25
               vc-follow-symlinks t
-              indent-tabs-mode t
+              indent-tabs-mode nil
               tab-width 4
-              c-basic-offset 8
+              c-basic-offset 4
+              c-basic-indent 4
               edebug-trace t
               fill-adapt-mode t
               winner-mode t

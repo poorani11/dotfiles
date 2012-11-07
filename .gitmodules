@@ -22,3 +22,6 @@
 [submodule ".elisp/pony-mode"]
 	path = .elisp/pony-mode
 	url = git://github.com/davidmiller/pony-mode.git
+[submodule ".elisp/php-mode"]
+	path = .elisp/php-mode
+	url = https://github.com/ejmr/php-mode.git
