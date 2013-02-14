@@ -24,10 +24,17 @@ xmodmap -e "keycode 135 = Super_R NoSymbol Super_R"
 pkill mpd; mpd &
 pkill xscreensaver; xscreensaver &
 pkill mpdscribble;mpdscribble &
-pkill notification-dae; /usr/lib/notification-daemon/notification-daemon &
+pkill notification-daemon; /usr/lib/notification-daemon/notification-daemon &
 #pkill xcompmgr;xcompmgr &
 
-#nm-applet &
+pkill nm-applet; nm-applet &
+pkill dropbox; dropbox start; dropbox &
+pkill pidgin; pidgin &
+pkill desktime-linux; desktime-linux &
 #mytrayer
 
 # vim:set ft=sh:
+
+pkill trayer; trayer --edge top --widthtype request --width 100 --height 14 --padding 5 &
+xset -b
+

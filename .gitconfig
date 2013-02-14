@@ -17,7 +17,7 @@
 	smtpencryption = tls
 	chainreplyto = false
 [core]
-	editor = "emacsclient -a '' -nc"
+	editor = vim
 	excludesfile = /home/psjinx/.gitignore
 [grep]
 	lineNumber = true
@@ -40,4 +40,4 @@
 [cola]
 	tabwidth = 4
 [gui]
-	editor = emacs
+	editor = gvim

@@ -128,7 +128,7 @@ customLayout = myShowWName $ avoidStruts $
 -------------------------------------------------------------------------------
 -- Terminal --
 terminal' :: String
-terminal' = "urxvt"
+terminal' = "terminator"
 
 -------------------------------------------------------------------------------
 -- Keys/Button bindings --

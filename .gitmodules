@@ -25,3 +25,9 @@
 [submodule ".elisp/php-mode"]
 	path = .elisp/php-mode
 	url = https://github.com/ejmr/php-mode.git
+[submodule ".elisp/epy"]
+	path = .elisp/epy
+	url = https://github.com/gabrielelanaro/emacs-for-python.git
+[submodule ".elisp/web-mode"]
+	path = .elisp/web-mode
+	url = https://github.com/fxbois/web-mode.git
