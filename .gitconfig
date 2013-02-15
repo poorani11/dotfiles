@@ -41,3 +41,7 @@
 	tabwidth = 4
 [gui]
 	editor = gvim
+[alias]
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	who = !echo \"== Commits by Author:\\n`git shortlog -s -n`\\n\"
+
