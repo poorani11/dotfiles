@@ -1,5 +1,31 @@
-" no vi-compatible
-set nocompatible
+"" Basic behaviour
+
+set nocompatible   " Disable vi-compatibility
+set laststatus=2   " Always show the statusline
+set encoding=utf-8 " Necessary to show unicode glyphs
+
+set noswapfile        "disable swapfiles
+set hidden            "hide buffers when not displayed
+set textwidth=0     "maximum width of text that can be inserted
+set nofoldenable        "dont fold by default
+set formatoptions-=o    "dont continue comments when pushing o/O
+
+imap ,/ </<C-X><C-O>
+
+"undofiles configuration
+set undodir=~/.vim/undofiles
+set undofile
+
+""commandline configuration
+set showcmd              "display incomplete commands
+set wildmode=list:longest   "make cmdline tab completion similar to bash
+set wildmenu                "enable C-n and C-p to scroll through matches
+"stuff to ignore when tab completing
+set wildignore=*.o,*~,*.pyc,*.hi
+
+""" Looks
+
+set t_Co=256                "force 256 colours """"
 
 " Setting up Vundle - the vim plugin bundler
 let iCanHazVundle=1
@@ -11,7 +37,6 @@ if !filereadable(vundle_readme)
     silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
     let iCanHazVundle=0
 endif
-
 " required for vundle
 filetype off
 
@@ -78,6 +103,10 @@ Bundle 'Wombat'
 " Yank history navigation
 Bundle 'YankRing.vim'
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set colorcolumn=+1        "mark the ideal max text width
+
 " Installing plugins the first time
 if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
@@ -85,9 +114,30 @@ if iCanHazVundle == 0
     :BundleInstall
 endif
 
+"display tabs and trailing spaces
+set list
+set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
+
+""some stuff to get the mouse going in term
+set mouse=a
+set ttymouse=xterm2
+
+
 " allow plugins by file type
+syntax enable
 filetype plugin on
 filetype indent on
+
+au FileType c cpp setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+
+"reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
+
+""open parameter indentation settings
+let g:pyindent_open_paren = '&sw'
+let g:pyindent_continue = '&sw'
+set cinoptions+=+1
 
 " tabs and spaces handling
 set expandtab
@@ -100,6 +150,8 @@ autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
+set nowrap                    "dont wrap lines
+
 " always show status bar
 set ls=2
 
@@ -108,6 +160,9 @@ set incsearch
 
 " highlighted search results
 set hlsearch
+
+set ignorecase    "ignore cases while searching
+set smartcase      "consider case for search patterns with uppercase letters
 
 " line numbers
 set nu
@@ -249,7 +304,7 @@ let g:pymode_lint_signs = 0
 " don't fold python code on open
 let g:pymode_folding = 0
 " don't load rope by default. Change to 1 to use rope
-let g:pymode_rope = 0
+let g:pymode_rope = 1
 
 " rope (from python-mode) settings
 nmap ,d :RopeGotoDefinition<CR>
@@ -289,5 +344,43 @@ let g:AutoClosePumvisible = {"ENTER": "\<C-Y>", "ESC": "\<ESC>"}
 
 " to use fancy symbols for powerline, uncomment the following line and use a
 " patched font (more info on the README.rst)
-" let g:Powerline_symbols = 'fancy'
-"
+let g:Powerline_symbols = 'unicode'
+
+" Load rope plugin
+let g:pymode_rope = 1
+
+" Auto create and open ropeproject
+let g:pymode_rope_auto_project = 1
+
+" Enable autoimport
+let g:pymode_rope_enable_autoimport = 1
+
+" Auto generate global cache
+let g:pymode_rope_autoimport_generate = 1
+
+let g:pymode_rope_autoimport_underlineds = 0
+
+let g:pymode_rope_codeassist_maxfixes = 10
+
+let g:pymode_rope_sorted_completions = 1
+
+let g:pymode_rope_extended_complete = 1
+
+let g:pymode_rope_autoimport_modules = ["os","shutil","datetime"]
+
+let g:pymode_rope_confirm_saving = 1
+
+let g:pymode_rope_global_prefix = "<C-x>p"
+
+let g:pymode_rope_local_prefix = "<C-c>r"
+
+let g:pymode_rope_vim_completion = 1
+
+let g:pymode_rope_guess_project = 1
+
+let g:pymode_rope_goto_def_newwin = ""
+
+let g:pymode_rope_always_show_complete_menu = 0
+
+" Auto fix vim python paths if virtualenv enabled
+let g:pymode_virtualenv = 0 "
