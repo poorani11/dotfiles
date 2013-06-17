@@ -28,3 +28,6 @@
 [submodule ".elisp/web-mode"]
 	path = .elisp/web-mode
 	url = https://github.com/fxbois/web-mode.git
+[submodule "sublime-text-2/Packages/Djaneiro"]
+	path = sublime-text-2/Packages/Djaneiro
+	url = https://github.com/squ1b3r/Djaneiro.git
