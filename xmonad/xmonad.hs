@@ -141,8 +141,9 @@ keys' :: XConfig Layout -> M.Map (KeyMask, KeySym) (X ())
 keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- launching and killing programs
     [ ((modMask,               xK_Return), spawn $ XMonad.terminal conf)
+    , ((modMask,               xK_l     ), spawn "gnome-screensaver-command -l")
     , ((modMask,               xK_p     ), spawn "gmrun")
-    , ((modMask .|. shiftMask, xK_p     ), spawn "exe=`dmenu_path | dmenu` && eval \"exec $exe\"")
+    , ((modMask .|. shiftMask, xK_p     ), spawn "exe=`dmenu_run` && eval \"exec $exe\"")
     , ((modMask .|. shiftMask, xK_c     ), kill)
 
     -- layouts
@@ -154,7 +155,7 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- Don't need split screens right now :)
     --, ((modMask .|. controlMask, xK_l   ), layoutSplitScreen 2 (TwoPane 0.5 0.5))
     --, ((modMask .|. controlMask, xK_r   ), rescreen)
-      
+
     -- floating layer stuff
     , ((modMask,               xK_t     ), withFocused $ windows . W.sink)
     , ((modMask,               xK_g     ), withFocused toggleBorder)
@@ -190,17 +191,17 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
 
     -- XF86AudioMute
-    , ((0 , 0x1008ff12), spawn "amixer -q set Master toggle")
+    , ((0 , 0x1008ff12), spawn "amixer -D pulse set Master 1+ toggle")
     -- XF86AudioLowerVolume
     , ((0 , 0x1008ff11), spawn "amixer -q set Master 1- unmute")
     -- XF86AudioRaiseVolume
     , ((0 , 0x1008ff13), spawn "amixer -q set Master 1+ unmute")
     -- XF86AudioNext
-    , ((0 , 0x1008ff17), spawn "mpc next")
+    , ((0 , 0x1008ff17), spawn "dbus-send --print-reply --type=method_call --dest=org.mpris.guayadeque /Player org.freedesktop.MediaPlayer.Next")
     -- XF86AudioPrev
-    , ((0 , 0x1008ff16), spawn "mpc prev")
+    , ((0 , 0x1008ff16), spawn "dbus-send --print-reply --type=method_call --dest=org.mpris.guayadeque /Player org.freedesktop.MediaPlayer.Prev")
     -- XF86AudioPlay
-    , ((0 , 0x1008ff14), spawn "mpc toggle")
+    , ((0 , 0x1008ff14), spawn "dbus-send --print-reply --type=method_call --dest=org.mpris.guayadeque /Player org.freedesktop.MediaPlayer.Pause")
 
     -- quit, or restart
     , ((modMask .|. shiftMask, xK_q     ), io exitSuccess)

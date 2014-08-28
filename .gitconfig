@@ -3,8 +3,8 @@
 [apply]
     whitespace = fix
 [user]
-    name = Pankaj Singh
-    email = psjinx@gmail.com
+	name = Pankaj Singh
+	email = psjinx@gmail.com
 [github]
     user = psjinx
 [format]

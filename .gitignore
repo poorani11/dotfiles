@@ -17,3 +17,5 @@ tramp
 # Org-mode
 .org-id-locations
 *_archive
+xmonad/xmonad-x86_64-linux
+xmonad/xmonad.errors

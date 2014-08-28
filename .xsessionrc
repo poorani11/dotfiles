@@ -5,10 +5,10 @@ xset b 100 400 100
 export PATH=$PATH:$HOME/bin
 
 ## Touchpad settings
-#synclient TapButton1=1, VertEdgeScroll=0, VertTwoFingerScroll=1, HorizTwoFingerScroll=1, HorizScrollDelta=104,
-#synclient PalmDetect=1, PalmMinWidth=5, PalmMinZ=50
-#synclient TouchpadOff=0, EmulateTwoFingerMinZ=80, VertScrollDelta=32
-#syndaemon -dKi 0.5
+synclient TapButton1=1, VertEdgeScroll=0, VertTwoFingerScroll=1, HorizTwoFingerScroll=1, HorizScrollDelta=104,
+synclient PalmDetect=1, PalmMinWidth=5, PalmMinZ=50
+ynclient TouchpadOff=0, EmulateTwoFingerMinZ=80, VertScrollDelta=32
+syndaemon -dKi 0.5
 
 # Looks
 #xsetroot -cursor_name left_ptr
@@ -18,19 +18,24 @@ export PATH=$PATH:$HOME/bin
 # Map menu key to Super_R (Useful for laptop keyboard)
 #xmodmap -e "keycode 135 = Super_R NoSymbol Super_R"
 
+#feh --bg-fill  /usr/share/backgrounds/Early_Blossom_by_Dh0r.jpg &
+feh --bg-fill ~/Pictures/wallpapers/430910.png
+
 pulseaudio &
 ## Start some useful programms
 #pkill udisks-glue; udisks-glue &
-pkill mpd; mpd &
+pkill thunar; thunar --daemon &
+#pkill mpd; mpd &
 pkill xscreensaver; xscreensaver &
 #pkill mpdscribble;mpdscribble &
 pkill notification-daemon; /usr/lib/notification-daemon/notification-daemon &
 #pkill xcompmgr;xcompmgr &
 
 pkill nm-applet; nm-applet &
-pkill skype; skype &
-#pkill dropbox; dropbox start; dropbox &
-pkill pidgin; pidgin &
+#pkill skype; skype &
+#pkill btsync; exec $HOME/.bin/btsync &
+pkill dropbox; dropbox start; dropbox &
+#pkill pidgin; pidgin &
 #pkill desktime-linux; desktime-linux &
 #mytrayer
 
