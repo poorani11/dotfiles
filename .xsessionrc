@@ -35,7 +35,8 @@ pkill nm-applet; nm-applet &
 #pkill skype; skype &
 #pkill btsync; exec $HOME/.bin/btsync &
 pkill dropbox; dropbox start; dropbox &
-#pkill pidgin; pidgin &
+pkill pidgin; pidgin &
+pkill xchat; xchat &
 #pkill desktime-linux; desktime-linux &
 #mytrayer
 
