@@ -141,10 +141,15 @@ keys' :: XConfig Layout -> M.Map (KeyMask, KeySym) (X ())
 keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- launching and killing programs
     [ ((modMask,               xK_Return), spawn $ XMonad.terminal conf)
-    , ((modMask,               xK_l     ), spawn "gnome-screensaver-command -l")
     , ((modMask,               xK_p     ), spawn "gmrun")
     , ((modMask .|. shiftMask, xK_p     ), spawn "exe=`dmenu_run` && eval \"exec $exe\"")
     , ((modMask .|. shiftMask, xK_c     ), kill)
+
+    -- screenlock
+    , ((modMask .|. controlMask, xK_l     ), spawn "xscreensaver-command -lock")
+
+    -- suspend
+    , ((modMask .|. controlMask, xK_s     ), spawn "dbus-send --system --print-reply --dest=\"org.freedesktop.UPower\" /org/freedesktop/UPower org.freedesktop.UPower.Suspend")
 
     -- layouts
     , ((modMask,               xK_space ), sendMessage NextLayout)
