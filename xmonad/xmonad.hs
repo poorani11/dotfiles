@@ -194,6 +194,12 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask .|. shiftMask, xK_h     ), sendMessage MirrorShrink)
     , ((modMask .|. shiftMask, xK_l     ), sendMessage MirrorExpand)
 
+    -- Take screenshot
+    , ((modMask, xK_Print), spawn "import -window root \"$HOME/Pictures/Screenshot $(date).png\"")
+    -- Take screenshot and copy to clipboard
+    -- CopyQ (https://github.com/hluk/CopyQ) is used for copying to Clipboard
+    , ((modMask .|. shiftMask, xK_Print), spawn "import -window root /tmp/__screenshot__.png && copyq write image/png - < /tmp/__screenshot__.png && copyq select 0")
+
 
     -- XF86AudioMute
     , ((0 , 0x1008ff12), spawn "amixer -D pulse set Master 1+ toggle")
