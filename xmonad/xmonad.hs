@@ -208,11 +208,11 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- XF86AudioRaiseVolume
     , ((0 , 0x1008ff13), spawn "amixer -q set Master 1+ unmute")
     -- XF86AudioNext
-    , ((0 , 0x1008ff17), spawn "dbus-send --print-reply --type=method_call --dest=org.mpris.guayadeque /Player org.freedesktop.MediaPlayer.Next")
+    , ((0 , 0x1008ff17), spawn "dbus-send --print-reply --type=method_call --dest=org.mpris.MediaPlayer2.spotify  /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next")
     -- XF86AudioPrev
-    , ((0 , 0x1008ff16), spawn "dbus-send --print-reply --type=method_call --dest=org.mpris.guayadeque /Player org.freedesktop.MediaPlayer.Prev")
+    , ((0 , 0x1008ff16), spawn "dbus-send --print-reply --type=method_call --dest=org.mpris.MediaPlayer2.spotify  /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Prev")
     -- XF86AudioPlay
-    , ((0 , 0x1008ff14), spawn "dbus-send --print-reply --type=method_call --dest=org.mpris.guayadeque /Player org.freedesktop.MediaPlayer.Pause")
+    , ((0 , 0x1008ff14), spawn "dbus-send --print-reply --type=method_call --dest=org.mpris.MediaPlayer2.spotify  /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause")
 
     -- quit, or restart
     , ((modMask .|. shiftMask, xK_q     ), io exitSuccess)
